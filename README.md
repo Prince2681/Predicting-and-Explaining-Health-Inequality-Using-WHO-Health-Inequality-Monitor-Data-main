@@ -1,6 +1,5 @@
 # Predicting and Explaining Health Inequality Using WHO Health Inequality Monitor Data
 
-[![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
 [![Python](https://img.shields.io/badge/Python-3.11-brightgreen.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red.svg)](https://streamlit.io/)
 [![MLflow](https://img.shields.io/badge/MLflow-Tracking-teal.svg)](https://mlflow.org/)
@@ -16,8 +15,6 @@ $$\text{Inequality Gap} = \text{Female Estimate} - \text{Male Estimate}$$
 
 ```text
 .
-├── Dockerfile                  # Container definition (Python 3.11)
-├── docker-compose.yml          # Multi-container orchestration (App + MLflow)
 ├── entrypoint.sh               # Container startup script
 ├── main.py                     # Main execution pipeline and CLI
 ├── app.py                      # Interactive Streamlit Web Dashboard
@@ -52,51 +49,8 @@ $$\text{Inequality Gap} = \text{Female Estimate} - \text{Male Estimate}$$
 
 ---
 
-## 🚀 Quick Start with Docker
 
-### 1. Build the Docker Image
-```bash
-docker build -t who-health-inequality .
-```
-
-### 2. Run the Container (Launches Pipeline & Streamlit Web App)
-```bash
-docker run -p 8501:8501 who-health-inequality
-```
-Then navigate to: **[http://localhost:8501](http://localhost:8501)**
-
-### 3. Run Pipeline CLI inside Docker
-To run the full command-line pipeline:
-```bash
-docker run who-health-inequality python main.py
-```
-
-To run a single real-time prediction inside Docker:
-```bash
-docker run who-health-inequality python main.py --predict --year 2024 --region European --income High-income --scale 100 --favourable 1
-```
-
----
-
-## 🐳 Running with Docker Compose
-
-To start both the **Streamlit Web Application** and the **MLflow Experiment Tracking UI**:
-
-```bash
-docker compose up --build
-```
-
-- **Streamlit Web Dashboard:** [http://localhost:8501](http://localhost:8501)
-- **MLflow Tracking Server:** [http://localhost:5000](http://localhost:5000)
-
-To stop services:
-```bash
-docker compose down
-```
-
----
-
-## 💻 Local Setup & Execution
+##  Local Setup & Execution
 
 ### 1. Install Dependencies
 ```bash
@@ -151,7 +105,7 @@ python main.py --ui
 
 ---
 
-## 🧠 Methodology & Modules Walkthrough
+## Methodology & Modules Walkthrough
 
 | Module | Core Purpose | Key Insight / Methodology |
 |---|---|---|
@@ -164,7 +118,7 @@ python main.py --ui
 
 ---
 
-## 📊 Summary of Model Performance
+## Summary of Model Performance
 
 ### Classification: Inequality Risk Tier (Low / Medium / High)
 
@@ -178,5 +132,5 @@ python main.py --ui
 
 ---
 
-## 📜 License
+## License
 This project is open-source under the MIT License.
