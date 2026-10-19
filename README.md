@@ -14,8 +14,7 @@ $$\text{Inequality Gap} = \text{Female Estimate} - \text{Male Estimate}$$
 ## 📁 Project Structure
 
 ```text
-.
-├── entrypoint.sh               # Container startup script
+
 ├── main.py                     # Main execution pipeline and CLI
 ├── app.py                      # Interactive Streamlit Web Dashboard
 ├── requirements.txt            # Python dependencies
